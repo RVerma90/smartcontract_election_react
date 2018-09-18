@@ -3,14 +3,28 @@ pragma solidity ^0.4.24;
 
 contract Election {
 
-    // Smoke test to ensure everything is set up correctly, such that it can be deployed and behaves as expected
-    
-    //  Store candidate
-    //  Read candidate
-    string public candidate;  
+    // Model a Candidate
+    struct Candidate {
+        uint id; 
+        string name;
+        uint voteCount;
+    }
 
+    // Store Candidate
+    // Fetch Candidate
+    mapping(uint => Candidate) public candidates;
+    // Store Candidates Count
+    uint public candidatesCount;
+    
+    // Constructor runs once upon deployment.
     constructor() public {
-      candidate = "Candidate 1";
+        addCandidate("Candidate 1");
+        addCandidate("Candidate 2");
+    }
+
+    function addCandidate (string _name) private {
+      candidatesCount ++;
+      candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
 }
