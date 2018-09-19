@@ -29,7 +29,25 @@ App = {
             // Connect provider to interact with contract
             App.contracts.Election.setProvider(App.web3Provider);
 
+            App.listenForEvents();
+
             return App.render();
+        });
+    },
+
+    listenForEvents: function() {
+        App.contracts.Election.deployed().then(function(instance) {
+            // Restart Crhome if unable to receive this event
+            // Known issue with Metamask
+            // https://github.com/MetaMask/metamask-extension/issues/2393
+            instance.votedEvent({}, {
+                fromBlock: 0,
+                toBlock: 'latest'
+            }).watch(function(error, event) {
+                console.log("event triggered", event)
+                // Reload when a new vote is recorded
+                App.render();
+            })
         });
     },
 
