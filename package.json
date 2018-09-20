@@ -1,5 +1,5 @@
 {
-    "name": "election",
+    "name": "election_react",
     "version": "1.0.0",
     "description": "",
     "main": "truffle.js",
@@ -12,7 +12,19 @@
     },
     "author": "",
     "license": "ISC",
-    "devDependencies": {
-        "lite-server": "^2.3.0"
+    "devDependencies": {},
+    "dependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.2",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "css-loader": "^1.0.0",
+        "json-loader": "^0.5.7",
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2",
+        "style-loader": "^0.23.0",
+        "web3": "^1.0.0-beta.36",
+        "webpack": "^4.19.1"
     }
 }
