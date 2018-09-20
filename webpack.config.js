@@ -26,9 +26,6 @@ module.exports = {
             query: {
                 presets: ['es2015', 'react', 'state-2']
             }
-        }, {
-            test: /\.json$/,
-            loader: 'json-loader'
         }]
     }
 }
