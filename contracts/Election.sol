@@ -48,7 +48,7 @@ contract Election {
         candidates[_candidateId].voteCount ++;
 
         // Trigger Voted Event
-        votedEvent(_candidateId);
+        emit votedEvent(_candidateId);
     }
 
 }
