@@ -19,6 +19,11 @@ module.exports = {
             exclude: /node_modules/,
             query: {
                 presets: ['es2015', 'react', 'state-2']
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader',
+                include: '/build/contracts/'
             }
         }]
     }
